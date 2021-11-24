@@ -1,0 +1,89 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
+using namespace std;
+
+
+
+
+
+	void Greeting (){
+		cout << "I. Welcome & Hi, You have to confirm your identity for access in this program, Good Luck! " << endl;
+	}
+	
+	void cIdentity(){
+		//Step I
+		
+		cout << "First; What is your name? " << endl;
+		string qName = "#";
+		string aName;
+		getline (cin, aName);
+		if (aName == qName ){
+			cout << ".I." << "Your name confirmed!" << endl;
+		
+		}
+		
+		else{
+			cout << "Your name rejected!";
+			terminate();
+		}
+	}
+	
+	void cIdentity2(){
+//		Step II
+	cout << "II. Enter your password: " << endl;
+	int password = 1;
+	int qPassword;
+	cin >> qPassword;
+	if (qPassword == password){
+		cout << "Password Accepted." << endl;
+	}
+	else{
+		cout << "Password is Wrong" << endl;
+		terminate();
+	}
+	}
+	 
+	 
+	 Menu(){
+	 	int menu;
+	 	cout << "Your Identity Confirmed!";
+	 }
+
+	int File(){
+		fstream fout;
+		fout.open("PassX-Files.csv", ios::out | ios::app);
+		int i;
+		string Website, ID, Password;
+		cout << "Enter details--> Site, ID & Password." << endl;
+		for (i = 0; i < 3; i++){
+			cin >> Website
+			    >> ID
+				>> Password;
+				
+		
+	
+		
+		fout << Website  << ", "
+		     << ID << ", "
+			 << Password
+			 <<"\n";
+			 break;
+			 
+	}
+	return Menu();
+	
+}
+		
+	
+int main(){
+	Greeting();
+	cIdentity();
+	cIdentity2();
+	 File();
+	
+	
+	
+}
